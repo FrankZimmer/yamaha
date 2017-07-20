@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="yamahamusiccast"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <!-- Sample Thing Type -->
+    <thing-type id="speaker">
+        <label>YamahaMusicCast Speaker</label>
+        <description>Sample thing for YamahaMusicCast Binding</description>
+
+        <channels>
+            <channel id="volume" typeId="volume"/>
+            <channel id="power" typeId="power"/>
+        </channels>
+        
+        <config-description>
+            <parameter name="host" type="text" required="true">
+                <label>Host</label>
+                <default>192.168.2.x</default>
+                <description>YAMAHA MusicCast Device host address</description>
+            </parameter>
+        
+        </config-description>    
+    </thing-type>
+
+    <channel-type id="volume">
+        <item-type>Dimmer</item-type>
+        <label>Volume</label>
+        <description>Volume</description>
+        <category>SoundVolume</category>
+        <state min="0" max="100"/>
+    </channel-type>
+    
+    <channel-type id="power">
+        <item-type>Switch</item-type>
+        <label>Power</label>
+        <description>Power</description>
+    </channel-type>
+
+</thing:thing-descriptions>
